@@ -1,6 +1,7 @@
 
 let myLibrary = [];
 const container = document.getElementsByClassName('container');
+const button = document.querySelector('button');
 
 function Book(name,author,pages,read) {
   this.name = name
@@ -31,15 +32,13 @@ myLibrary.forEach(function (e) {
     newCard.innerHTML += '<p>' + e.pages + ' pages' + '</p>';
     
     newCard.classList.add('card');
-    document.getElementById('container').appendChild(newCard);
+    document.querySelector('.container').appendChild(newCard);
 
 });
 
-// var testCard = document.createElement('div');
-// testCard.innerHTML = '<p>apple</p>';
-// testCard.classList.add('card');
+button.addEventListener("click", addButtonClicked);
 
-// document.getElementById('container').appendChild(testCard);
-
-
-// //
+function addButtonClicked() {
+  document.querySelector(".book-form").style.display = "flex";
+  document.querySelector(".container").style.gridTemplateRows = "150px 200px repeat(auto-fit,minmax(200px,1fr))";
+}
