@@ -4,11 +4,15 @@ const container = document.getElementsByClassName('container');
 const button = document.querySelector('button');
 const form = document.querySelector('form');
 
-function Book(name,author,pages,read) {
-  this.name = name
-  this.author = author
-  this.pages = pages
-  this.read = read
+
+class Book {
+  constructor(name,author,pages,read)
+  {
+    this.name = name;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
 }
 
 
